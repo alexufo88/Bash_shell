@@ -31,3 +31,15 @@ minsize
 size
 dateext
 
+
+
+EG:
+/var/log/wtmp {       <==僅針對 /var/log/wtmp 所設定的參數
+    monthly           <==每個月一次，取代每週！
+    create 0664 root utmp <==指定新建檔案的權限與所屬帳號/群組
+    minsize 1M        <==檔案容量一定要超過 1M 後才進行 rotate (略過時間參數)
+    rotate 1          <==僅保留一個，亦即僅有 wtmp.1 保留而已。
+}
+
+#logrotate -f /etc/logrotate.conf
+
