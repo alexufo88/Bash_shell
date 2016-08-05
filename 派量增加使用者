@@ -11,3 +11,10 @@ do
 	adduser $user                                  #useradd
 	echo "$pass" | passwd --stdin $user &gt; /dev/null          #use pipe let $pass output to passwd  
 done
+
+
+
+#users.txt sample
+#Tim,abc123
+#Ken,1234
+#John,3210
