@@ -1,0 +1,33 @@
+
+/etc/rsyslog.conf
+相對序號	服務類別	說明
+0	kern(kernel)	就是核心 (kernel) 產生的訊息，大部分都是硬體偵測以及核心功能的啟用
+1	user	在使用者層級所產生的資訊，例如後續會介紹到的用戶使用 logger 指令來記錄登錄檔的功能
+2	mail	只要與郵件收發有關的訊息記錄都屬於這個；
+3	daemon	主要是系統的服務所產生的資訊，例如 systemd 就是這個有關的訊息！
+4	auth	主要與認證/授權有關的機制，例如 login, ssh, su 等需要帳號/密碼的咚咚；
+5	syslog	就是由 syslog 相關協定產生的資訊，其實就是 rsyslogd 這支程式本身產生的資訊啊！
+6	lpr	亦即是列印相關的訊息啊！
+7	news	與新聞群組伺服器有關的東西；
+8	uucp	全名為 Unix to Unix Copy Protocol，早期用於 unix 系統間的程序資料交換；
+9	cron	就是例行性工作排程 cron/at 等產生訊息記錄的地方；
+10	authpriv	與 auth 類似，但記錄較多帳號私人的資訊，包括 pam 模組的運作等！
+11	ftp	與 FTP 通訊協定有關的訊息輸出！
+16~23	local0 ~ local7	保留給本機用戶使用的一些登錄檔訊息，較常與終端機互動。
+
+
+登錄檔的輪替(logrotate)
+/etc/logrotate.conf
+daily
+weekly
+monthly
+rotate
+compress
+create #create 0600 root root
+mail addess
+missingok
+notifempty
+minsize
+size
+dateext
+
