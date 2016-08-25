@@ -1,0 +1,21 @@
+adduser user
+# adduser admin
+# id admin
+# passwd admin
+
+sudo permissions for your new admin user
+# echo 'admin ALL=(ALL) ALL' >> /etc/sudoers
+
+# ssh admin@my.ip.or.hostname
+
+Verify that you can su (switch user) to root with the admin user
+$ su -
+$ whoami
+
+To disable root SSH login, edit /etc/ssh/sshd_config
+# vi /etc/ssh/sshd_config
+#PermitRootLogin yes
+Edit to this:
+PermitRootLogin no
+
+# /etc/init.d/sshd restart
