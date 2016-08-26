@@ -40,13 +40,27 @@ abc123
 #64位系统增加以下两句：
 #db=/是你生成的虚拟用户的db文件
 #注释掉/etc/pam.d/vsftpd中所有的内容 本地用户會認証不了
-＃我們不會注釋， 我們本地用戶用了SSL    不怕
 auth   required    /lib64/security/pam_userdb.so db=/etc/vsftpd/vuser
 account required    /lib64/security/pam_userdb.so db=/etc/vsftpd/vuser
 -----------------------------------------------------
 
 # useradd -d /home -s /sbin/nologin vuser
-# 
+#chmod 755 /home/vftproot
+
+#vim /etc/vsftpd/vsftpd.conf
+---------------------------------------
+guest_enable=YES
+guest_username=vuser
+pam_service_name=vsftpd
+
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+anon_other_write_enablr=YES
+-----------------------------------------
+
+
+#service vsftpd restart
+
 
 
 
