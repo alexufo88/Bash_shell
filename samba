@@ -1,0 +1,37 @@
+-----------------------------------------------------------------------------------
+security = share
+
+[share]
+        comment = share all
+        path = /tmp/samba
+        browseable = yes
+        public = yes   //or guest ok = Yes
+        writable = no
+---------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://sam0537.blogspot.hk/2015/02/centos-65-samba.html
+
