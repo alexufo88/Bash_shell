@@ -1,4 +1,4 @@
-# 工作排程的種類
+# (工作排程的種類)
 #循環執行的例行性工作排程
 #系統的設定檔： /etc/crontab,  /etc/cron.d/*
 # *  *  *  *  * user-name  command to be executed
